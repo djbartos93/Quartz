@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+
+  has_one :player
+  before_create :build_player
+  accepts_nested_attributes_for :player
 end
