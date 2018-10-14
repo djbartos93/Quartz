@@ -40,6 +40,8 @@ class PlayersController < ApplicationController
     end
   end
 
+
+
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
@@ -51,6 +53,15 @@ class PlayersController < ApplicationController
         format.html { render :edit }
         format.json { render json: @player.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def playerverify
+    @username = Player.username
+    helpers.mojangAPI(@username)
+    if @mcuuid.nil? || @mcuuid.empty?
+      format.json { render json: @player.errors, status: :unprocessable_entity }
+    else
     end
   end
 

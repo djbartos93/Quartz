@@ -7,6 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <section id="header-main">
+      <% if current_user %>
+      <%= render "shared/main_header" %>
+    <% end %>
+</section>
+
   </head>
 
   <body>

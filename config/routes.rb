@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :dashboard
   resources :request
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'players#index'
+  root 'dashboard#index'
 
   get 'discourse/sso' => 'discourse_sso#sso'
 
