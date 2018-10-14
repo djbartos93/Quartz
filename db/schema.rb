@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_034416) do
+ActiveRecord::Schema.define(version: 2018_10_14_045049) do
 
   create_table "invites", force: :cascade do |t|
     t.string "token"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2018_10_14_034416) do
   create_table "players", force: :cascade do |t|
     t.string "username"
     t.string "uuid"
-    t.boolean "user_enabled"
-    t.boolean "admin_disabled"
+    t.boolean "user_enabled", default: true
+    t.boolean "admin_disabled", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "invites"
+    t.integer "invites", default: 5
     t.integer "user_id"
     t.index ["user_id"], name: "index_players_on_user_id"
   end
