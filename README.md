@@ -1,24 +1,23 @@
-# README
+# Quarts - Minecraft Whitelisting & Invites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Quartz is a ruby app written to pair with the [Sponge](https://spongepowered.org) [SQL-Whitelist plugin](https://github.com/fmohican/SQL-WhiteList) to automatically add registered users to the Minecraft whitelist.
 
-Things you may want to cover:
+#Features
+- User signup and email verification
+- Ability to use invite codes or open registration
 
-* Ruby version
+# Requirements
 
-* System dependencies
+For this app to actually do anything in minecraft
 
-* Configuration
+## Config & Deployment
 
-* Database creation
+### Signup Email Verification
 
-* Database initialization
+Config info coming soon
 
-* How to run the test suite
+### SSO Provider
 
-* Services (job queues, cache servers, search engines, etc.)
+This app has builtin SSO for a discourse forum. To use, change the name of sso_controler.rb.example to sso_controler.rb and edit the defaults
 
-* Deployment instructions
-
-* ...
+### Deployment
