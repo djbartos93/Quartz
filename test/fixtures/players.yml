@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  uuid: MyString
+  user_enabled: false
+  admin_disabled: false
+
+two:
+  username: MyString
+  uuid: MyString
+  user_enabled: false
+  admin_disabled: false
