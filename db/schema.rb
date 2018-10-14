@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_023444) do
+ActiveRecord::Schema.define(version: 2018_10_14_024026) do
 
   create_table "invites", force: :cascade do |t|
     t.string "token"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_023444) do
     t.boolean "admin_disabled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "invites"
   end
 
 end
