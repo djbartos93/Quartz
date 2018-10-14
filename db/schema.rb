@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_020203) do
+ActiveRecord::Schema.define(version: 2018_10_14_024026) do
+
+  create_table "invites", force: :cascade do |t|
+    t.string "token"
+    t.integer "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_invites_on_player_id"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "username"
@@ -19,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_020203) do
     t.boolean "admin_disabled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "invites"
   end
 
   create_table "users", force: :cascade do |t|
