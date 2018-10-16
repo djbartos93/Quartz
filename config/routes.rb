@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   get 'discourse/sso' => 'discourse_sso#sso'
 
+  get 'validate', to: 'players#validate'
+
 end
