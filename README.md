@@ -18,6 +18,11 @@ Config info coming soon
 
 ### SSO Provider
 
-This app has builtin SSO for a discourse forum. To use, change the name of sso_controler.rb.example to sso_controler.rb and edit the defaults
+This app has builtin SSO for a discourse forum. To use, change the name of disourse_sso_controler.rb.example to discourse_sso_controler.rb and edit the defaults
 
 ### Deployment
+
+
+##Style development / css editing
+
+We are using Bulma as our css framework. To customize you will need to run npm install, npm run watch when editing your theme and npm run build when preparing for deployment.
