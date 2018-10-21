@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_045049) do
+ActiveRecord::Schema.define(version: 2018_10_21_011446) do
 
   create_table "invites", force: :cascade do |t|
     t.string "token"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_045049) do
     t.boolean "admin_disabled", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "invites", default: 5
+    t.integer "available_invites", default: 5
     t.integer "user_id"
     t.index ["user_id"], name: "index_players_on_user_id"
   end
@@ -47,6 +47,11 @@ ActiveRecord::Schema.define(version: 2018_10_14_045049) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
