@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+
+//###################################################
+//Bulma overrides section
+
+// Set your brand colors
+$purple: #8A4D76;
+$blue-stain: #4d409d;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$bg-grey: #4b4b4b;
+$bg-grey-lt: #666262;
+$off-white: #faf1ed;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $blue-stain;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$text: $off-white;
+
+// Update some of Bulma's component variables
+$body-background-color: $bg-grey;
+$background: $bg-grey;
+$control-border-width: 2px;
+//$input-border-color: transparent;
+//$input-shadow: none;
+
+$label-color: $off-white;
+$navbar-background-color: $bg-grey-lt;
+
+//###################################################
+//Custom section
+
+//set a background color class to style all elements that dont inherit bulma backgrounds
+.bg-primary {
+  background-color: $bg-grey;
+}
+
+
+//set non button link colors
+a {
+  color: $off-white;
+
+  &:visited {
+    color: $beige-light;
+  }
+
+  &:hover {
+    color: #9a83cc;
+  }
+}
+
+
+
+
+
+//import bulma elements, always needs to be at the end! only import what we need.
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/components/navbar.sass";
+@import "bulma/sass/components/dropdown.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/container.sass";
+@import "bulma/sass/elements/form.sass";
+@import "bulma/sass/elements/icon.sass";
+@import "bulma/sass/elements/table.sass";
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/grid/columns.sass";
+@import "bulma/sass/layout/section.sass";
