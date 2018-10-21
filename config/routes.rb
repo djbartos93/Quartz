@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get 'validate', to: 'players#validate'
 
+  get ':token', to: 'registrations#new', constraints: lambda { |request| Invite.where(token: request[:token]).any? }
 end

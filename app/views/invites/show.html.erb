@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>Invite Link:</strong>
+  <%= link_to 'Copy Me!', request.base_url + "/" + @invite.token %>
+</p>
 
 <%= link_to 'Edit', edit_invite_path(@invite) %> |
 <%= link_to 'Back', invites_path %>
