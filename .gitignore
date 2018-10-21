@@ -33,3 +33,4 @@
 #ignore sso super secret stuff
 app/controllers/sso_controler.rb
 app/controllers/discourse_sso_controller.rb
+app/assets/stylesheets/theme.css
