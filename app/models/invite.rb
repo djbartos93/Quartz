@@ -4,6 +4,7 @@ class Invite < ApplicationRecord
   belongs_to :player
   
   before_create :generate_token
+  after_create :decrement_available_invites
 
   def generate_token
     token = nil
@@ -12,5 +13,9 @@ class Invite < ApplicationRecord
       break if Invite.where(:token => token).empty?
     end
     self.token = token
+  end
+
+  def decrement_available_invites
+    player.decrement! :available_invites
   end
 end
