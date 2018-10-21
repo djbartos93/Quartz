@@ -32,6 +32,12 @@ We are using Bulma as our css framework. To customize you will need to run npm i
 currently working on making this a less complex process.
 
 # TODO
+## Overall
+- [ ] Write tests
+- [ ] Create standard theme thats easy to modify
+- [ ] make sure routes work right
+- [ ] create admin authorization
+- [ ] prevent users from seeing things they shouldnt
 ## Whitelist
 ### Core
 - [ ] Validate players minecraft username

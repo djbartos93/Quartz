@@ -20,12 +20,14 @@
   </head>
 
   <body class="bg-primary">
-    <div class="section">
     <% if notice %>
+    <div class="section">
+
       <div class="container is-fluid notification is-info">
       <p class="alert alert-success has-text-centered"><%= notice %></p>
     <% end %>
     <% if alert %>
+    <div class="section">
     <div class="container is-fluid notification is-danger">
       <p class="alert alert-danger has-text-centered"><%= alert %></p>
     <% end %>
