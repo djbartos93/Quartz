@@ -66,4 +66,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
+#To build the production theme
+
 gem 'webpack'
+
+# CMS for main pages and "blog"
+
+gem 'comfortable_mexican_sofa', '~> 2.0.0'
