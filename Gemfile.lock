@@ -86,6 +86,8 @@ GEM
       rails (>= 5.2.0)
       rails-i18n (>= 5.0.0)
       sass-rails (>= 5.0.0)
+    comfy_blog (2.0.7)
+      comfortable_mexican_sofa (>= 2.0.14)
     comfy_bootstrap_form (4.0.6)
       rails (>= 5.0.0)
     concurrent-ruby (1.0.5)
@@ -259,6 +261,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   comfortable_mexican_sofa (~> 2.0.0)
+  comfy_blog (~> 2.0.0)
   devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
