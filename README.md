@@ -2,7 +2,7 @@
 
 Quartz is a ruby app written to pair with the [Sponge](https://spongepowered.org) [SQL-Whitelist plugin](https://github.com/fmohican/SQL-WhiteList) to automatically add registered users to the Minecraft whitelist.
 
-#Features
+# Features
 - User signup and email verification
 - Ability to use invite codes or open registration
 
@@ -13,7 +13,6 @@ Quartz is a ruby app written to pair with the [Sponge](https://spongepowered.org
 - A MySQL database to link to
 - For this app to actually do anything in minecraft you will need the [SQL-Whitelist plugin](https://github.com/fmohican/SQL-WhiteList)
 
-## Config & Deployment
 
 ### Signup Email Verification
 
@@ -24,6 +23,26 @@ Config info coming soon
 This app has builtin SSO for a discourse forum. To use, change the name of disourse_sso_controler.rb.example to discourse_sso_controler.rb and edit the defaults
 
 ### Deployment
+
+### Dev setup
+
+To work on Quartz you need to run a few commands, I am assuming you already have ruby installed on your machine
+
+1. npm install to download the theme
+2. run rails active_storage:install (this may not be needed, but it wont hurt to run again)
+3. bundle install
+4. rake db:migrate and you should be good to go!
+  1. to skip manually creating an admin user you can run rake db:seed to create the default admin user listed below
+
+##### Default admin user if running rake db:seed
+
+
+**NOTE! If you do run the seed command, you MUST change the email and password, they are stored in plain text in this repo. I am not responsible if you deply this app publicly and use the default admin credentials.**
+
+Username/email: admin@example.com
+
+password: admin1234
+
 
 
 ## Style development / css editing
