@@ -68,6 +68,7 @@ currently working on making this a less complex process.
 - [ ] Allow users to request more invites from an admin
   - [ ] Create request pages
   - [ ] Create request confirmation / deny actions (emails or alerts on the site?)
+- [ ] allow admins to have unlimited invites
 ### Style
 - [ ] Finish styling login/signup pages
 - [ ] Create user dashboard

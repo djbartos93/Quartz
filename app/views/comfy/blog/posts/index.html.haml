@@ -3,7 +3,7 @@
     .col-md-8
       %h1 Blog Posts
 
-      - @blog_posts.each do |post|
+      - @blog_posts.where.not(slug: "announcement").each do |post|
 
         %h2
           = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
