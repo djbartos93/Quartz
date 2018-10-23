@@ -1,7 +1,13 @@
 <% @posts = Comfy::Blog::Post.all %>
 <% @posts.where("slug = 'announcement'").limit(1).each do |p| %>
-  <article>
-    <h1><%= p.title %></h1>
-    <h1><%= p.content_cache.html_safe %></h1>
-  </article>
+<section class="hero is-warning is-small rounded-elements">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-size-3"><%= p.title %></h1>
+      <article>
+        <h1><%= p.content_cache.html_safe %></h1>
+      </article>
+    </div>
+  </div>
+</section>
 <% end %>

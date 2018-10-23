@@ -31,8 +31,9 @@ To work on Quartz you need to run a few commands, I am assuming you already have
 1. npm install to download the theme
 2. run rails active_storage:install (this may not be needed, but it wont hurt to run again)
 3. bundle install
-4. rake db:migrate and you should be good to go!
+4. rake db:migrate
   1. to skip manually creating an admin user you can run rake db:seed to create the default admin user listed below
+5. rake 'comfy:cms_seeds:import[primary, primary]'
 
 ##### Default admin user if running rake db:seed
 
@@ -43,6 +44,17 @@ Username/email: admin@example.com
 
 password: admin1234
 
+### Using Quartz without the built in CMS
+
+If you dont need the Content managment and blog functionality of Quartz you can disable a few things and it will stay out of your way. First you will need to disable the CMS routes by commenting out the following lines in your app/routes.rb file.
+
+`  comfy_route :blog_admin, path: "/admin"
+  comfy_route :blog, path: "/blog"
+  comfy_route :cms_admin, path: "/admin"`
+
+`  comfy_route :cms, path: "/" `
+
+You will also have to change your root path. again in app/routes.rb change `root to: 'comfy/cms/content#show'` to something else. I reccomend `root to: 'dashboard#index'`
 
 
 ## Style development / css editing
