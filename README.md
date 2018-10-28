@@ -33,7 +33,10 @@ To work on Quartz you need to run a few commands, I am assuming you already have
 3. bundle install
 4. rake db:migrate
   1. to skip manually creating an admin user you can run rake db:seed to create the default admin user listed below
-5. rake 'comfy:cms_seeds:import[primary, primary]'
+5. Launch the app with rails server
+6. go to your-site-path/admin (if running locally localhost:3000/admin) and login, if you aren't using the seed, you will have to make an account and set admin to "1" in the database. if you are redirected, just go back to /admin
+7. create your site! Name it whatever, put in the path and click create. When you do this and its done, stop the server.
+8. rake 'comfy:cms_seeds:import[primary, primary]'
 
 ##### Default admin user if running rake db:seed
 
