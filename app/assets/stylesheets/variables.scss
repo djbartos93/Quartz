@@ -67,6 +67,10 @@ a {
 
 }
 
+.rounded-elements {
+  border-radius: 10px;
+}
+
 
 
 
@@ -85,3 +89,5 @@ a {
 @import "bulma/sass/elements/button.sass";
 @import "bulma/sass/grid/columns.sass";
 @import "bulma/sass/layout/section.sass";
+@import "bulma/sass/layout/hero.sass";
+//@import "bulma/sass/layout/footer.sass";

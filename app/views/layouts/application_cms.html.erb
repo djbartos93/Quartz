@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quartz</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <section id="header-main">
+      <%= render "shared/main_header" %>
+      <% if current_user %>
+
+    <% end %>
+</section>
+
+  </head>
+
+  <body class="bg-primary">
+    <% if notice %>
+    <div class="section">
+
+      <div class="container is-fluid notification is-info">
+      <p class="alert alert-success has-text-centered"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <div class="section">
+    <div class="container is-fluid notification is-danger">
+      <p class="alert alert-danger has-text-centered"><%= alert %></p>
+    <% end %>
+  </div>
+</div>
+  <div class="section">
+    <div class="columns">
+      <div class="column">
+        <%= yield %>
+      </div>
+      <div class="column is-narrow">
+        <iframe src="https://discordapp.com/widget?id=500701959989493760&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  </body>
+  <div class="footer-placement">
+  <%= render "shared/main_footer" %>
+</div>
+</html>
