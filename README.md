@@ -70,12 +70,12 @@ currently working on making this a less complex process.
 - [ ] Write tests
 - [ ] Create standard theme thats easy to modify
 - [ ] make sure routes work right
-- [ ] create admin authorization
+- [x] create admin authorization
 - [ ] prevent users from seeing things they shouldnt
 ## Whitelist
 ### Core
-- [ ] Validate players minecraft username
-  - [ ] Call uuid from Mojang and insert on player creation
+- [x] Validate players minecraft username
+  - [x] Call uuid from Mojang and insert on player creation
 - [ ] Make invite codes work
   - [ ] Create invalid invite page
 - [ ] Create error pages
