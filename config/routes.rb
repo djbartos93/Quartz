@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   comfy_route :blog, path: "/blog"
   comfy_route :cms_admin, path: "/admin"
 
+  post 'users/enable_otp'
+  post 'users/disable_otp'
+
   devise_for :users
   resources :players
   resources :invites

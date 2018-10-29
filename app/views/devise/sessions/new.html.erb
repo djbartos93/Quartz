@@ -38,6 +38,9 @@
             </div>
             </br >
 
+            <div><%= f.label :otp_attempt %><br />
+              <%= f.text_field :otp_attempt %> </div>
+
             <% if devise_mapping.rememberable? -%>
 
             <div class="control">

@@ -75,6 +75,5 @@ gem 'webpack'
 gem 'comfortable_mexican_sofa', '~> 2.0.0'
 gem "comfy_blog", "~> 2.0.0"
 
-#minecraft status on cms home page
-
-gem 'minestat'
+gem 'devise-two-factor'
+gem 'rqrcode-rails3'
