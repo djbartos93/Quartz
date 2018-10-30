@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class Invite < ApplicationRecord
-  belongs_to :player
+  belongs_to :user
   
   before_create :generate_token
   after_create :decrement_available_invites
@@ -16,6 +16,6 @@ class Invite < ApplicationRecord
   end
 
   def decrement_available_invites
-    player.decrement! :available_invites
+    user.decrement! :available_invites
   end
 end
