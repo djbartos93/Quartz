@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :user_admins
+  end
+
   comfy_route :blog_admin, path: "/admin"
   comfy_route :blog, path: "/blog"
   comfy_route :cms_admin, path: "/admin"
