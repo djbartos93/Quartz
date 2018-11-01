@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   post 'users/disable_otp'
 
   devise_for :users
+    scope "/admin/user_admins/uses" do
+      resources :users
+    end
+
   resources :players
   resources :invites
   resources :dashboard

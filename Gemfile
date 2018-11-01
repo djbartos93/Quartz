@@ -63,17 +63,20 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 # Authentication
-
 gem 'devise'
+
+# cancan for fine grain user authorization and roles
+gem 'cancancan', '~> 2.0'
+
+# 2 factor authentication
+gem 'devise-two-factor'
+gem 'rqrcode-rails3'
+
 
 #To build the production theme
 
 gem 'webpack'
 
 # CMS for main pages and "blog"
-
 gem 'comfortable_mexican_sofa', '~> 2.0.0'
 gem "comfy_blog", "~> 2.0.0"
-
-gem 'devise-two-factor'
-gem 'rqrcode-rails3'
