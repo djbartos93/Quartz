@@ -73,7 +73,8 @@ class PlayersController < ApplicationController
     end
   end
 
-
+  #we need to verify that the username entered is actually a real minecraft username. This does that...somehow.
+  #also nothing in here really handles errors well. Fix that.
   def verify_player(player_params)
     puts "THIS IS THE PLAYER ID #{@player.id}"
     puts "THIS IS THE PLAYERS USERNAME #{player_params[:username]}"
@@ -81,6 +82,7 @@ class PlayersController < ApplicationController
     mojangAPI(@username)
     puts @mcuuid.to_s
     if @mcuuid.nil? || @mcuuid.empty?
+      #this should probably be a real error that a user can see, other than "an error prevented you from saving" or whatever it says.
       puts "ITS EMPTY!"
     else
       puts "GOT A UUID!"
@@ -89,12 +91,14 @@ class PlayersController < ApplicationController
 
   private
 
+  #this goes and gets the players UUID from mojang.
   def mojangAPI(username)
     puts "MC USER INPUT:#{username}"
     url = "https://api.mojang.com/users/profiles/minecraft/#{username}"
     uri = URI(url)
     response_raw = Net::HTTP.get(uri)
     if response_raw.nil? || response_raw.empty?
+      #this should really throw a proper error that the users can see...
       puts "INVALID RESPONSE"
     else
       response = response_raw

@@ -1,5 +1,7 @@
 require 'single_sign_on'
 
+#So I really have no idea how this works, but it does. Lets just go with that.
+
 class DiscourseSsoController < ApplicationController
   before_action :authenticate_user! # ensures user must login
 

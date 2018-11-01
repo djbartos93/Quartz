@@ -7,7 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-    email: "admin@example.com",
+    email: "user@example.com",
+    password: "admin1234",
+    password_confirmation: "admin1234",
+    admin: "1"
+)
+user.skip_confirmation! #only if using confirmable in devise settings in user model.
+user.save!
+
+user = User.new(
+    email: "player@example.com",
+    password: "admin1234",
+    password_confirmation: "admin1234",
+    admin: "1"
+)
+user.skip_confirmation! #only if using confirmable in devise settings in user model.
+user.save!
+
+user = User.new(
+    email: "me@example.com",
     password: "admin1234",
     password_confirmation: "admin1234",
     admin: "1"

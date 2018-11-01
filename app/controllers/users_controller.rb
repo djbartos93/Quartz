@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: '/')
   end
 
+  # need to override the update method so admins can fix accounts if users lock themselves out with 2fa enabled
   def update
   @user = User.find(params[:id])
   params[:user].delete(:password) if params[:user][:password].blank?
