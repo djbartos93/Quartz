@@ -2,10 +2,15 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  #this is what throws an error if you are not allowed to access a page. but right now it just tells you that you are logged in.
   rescue_from CanCan::AccessDenied do |exception|
-        flash[:error] = exception.message
-        redirect_to root_url
-      end
+    respond_to do |format|
+      format.json { head :forbidden, content_type: 'text/html' }
+      format.html { redirect_to main_app.root_url, notice: exception.message }
+      format.js   { head :forbidden, content_type: 'text/html' }
+    end
+  end
+
   def after_sign_in_path_for(resource)
     if resource.is_a?(User) && resource.sign_in_count == 1
       player = Player.find_by user_id: resource.id

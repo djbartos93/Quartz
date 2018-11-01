@@ -16,6 +16,9 @@ class Admin::UserAdminsController < Comfy::Admin::BaseController
   #TODO make sure other users cant get at this path.
   def edit
   @user = User.find(params[:id])
+
+  #this works, but we can do better.
+  authorize! :edit, @user
   end
 
   ##TODO actually make this work right.
