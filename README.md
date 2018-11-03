@@ -71,7 +71,7 @@ currently working on making this a less complex process.
 - [ ] Create standard theme thats easy to modify
 - [ ] make sure routes work right
 - [x] create admin authorization
-- [ ] prevent users from seeing things they shouldnt
+- [x] prevent users from seeing things they shouldnt
 ## Whitelist
 ### Core
 - [x] Validate players minecraft username
@@ -84,6 +84,9 @@ currently working on making this a less complex process.
   - [ ] Create request pages
   - [ ] Create request confirmation / deny actions (emails or alerts on the site?)
 - [ ] allow admins to have unlimited invites
+- [ ] prevent players from deleting used invites
+- [ ] create minecraft player view
+  - [ ] create invite tree view
 ### Style
 - [ ] Finish styling login/signup pages
 - [ ] Create user dashboard
@@ -98,3 +101,4 @@ currently working on making this a less complex process.
   - [x] static page manager
 - [x] Image and file upload
 - [ ] Docs section (some kind of wiki like function)
+- [ ] better minecraft server status on sidebar (that is easy to customize)

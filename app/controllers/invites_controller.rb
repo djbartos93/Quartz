@@ -70,13 +70,13 @@ class InvitesController < ApplicationController
   end
 
   def readonly?
-    new_record? ? false : true 
+    new_record? ? false : true
   end
 
   private
     def has_invites
       unless current_user.player.available_invites > 0
-        flash[:error] = "You have no invites left"
+        flash[:alert] = "You have no invites left"
 	redirect_back fallback_location: invites_url # TODO redirect to request page instead of just going back
       end
     end
