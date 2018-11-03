@@ -60,11 +60,6 @@ If you dont need the Content managment and blog functionality of Quartz you can 
 You will also have to change your root path. again in app/routes.rb change `root to: 'comfy/cms/content#show'` to something else. I reccomend `root to: 'dashboard#index'`
 
 
-## Style development / css editing
-
-We are using Bulma as our css framework. To customize you will need to run npm install, npm run watch when editing your theme and npm run build when preparing for deployment.
-currently working on making this a less complex process.
-
 # TODO
 ## Overall
 - [ ] Write tests
@@ -72,6 +67,7 @@ currently working on making this a less complex process.
 - [ ] make sure routes work right
 - [x] create admin authorization
 - [x] prevent users from seeing things they shouldnt
+- [ ] when user account is disabled or deleted disable or delete Minecraft player from wihtelist database
 ## Whitelist
 ### Core
 - [x] Validate players minecraft username
