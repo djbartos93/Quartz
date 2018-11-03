@@ -8,7 +8,8 @@
       <th>Sign In Count</th>
       <th>Last Sign In Time</th>
       <th>Last IP</th>
-      <th>User Disabled?</th>
+      <th>User Deactivated?</th>
+      <th>Deactivation Reason</th>
       <th>OTP Enabled?</th>
       <th colspan="3"></th>
     </tr>
@@ -21,7 +22,8 @@
         <td><%= user.sign_in_count %></td>
         <td><%= user.last_sign_in_at %></td>
         <td><%= user.last_sign_in_ip %></td>
-        <td>placeholder</td>
+        <td><%= user.deactivated %> </td>
+        <td><%= user.deactivation_reason %> </td>
         <td><%= user.otp_required_for_login %></td>
         <td><%= link_to 'Edit', edit_admin_user_admin_path(user) %></td>
       </tr>

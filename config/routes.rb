@@ -13,10 +13,21 @@ Rails.application.routes.draw do
   post 'users/:id/enable_otp/' => 'users#admin_enable_otp', as: 'admin_enable_otp'
     post 'users/:id/disable_otp/' => 'users#admin_disable_otp', as: 'admin_disable_otp'
 
-  devise_for :users
-    scope "/admin/user_admins/uses" do
+  post 'users/:id/reactivate_user/' => 'users#admin_reactivate', as: 'admin_reactivate_user'
+
+    devise_for :users, controllers: {
+      sessions: 'users/sessions'
+    }
+    scope "admin/user_admins/users" do
       resources :users
     end
+    devise_scope :user do
+      scope :users, as: :users do
+        post 'pre_otp', to: 'users/sessions#pre_otp'
+      end
+    end
+
+
 
   resources :players
   resources :invites

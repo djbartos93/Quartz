@@ -11,4 +11,13 @@ class User < ApplicationRecord
   has_one :player
   before_create :build_player
   accepts_nested_attributes_for :player
+
+  #adds deactivated method to devise
+  def active_for_authentication?
+    super && !deactivated
+  end
+
+  def inactive_message
+  !deactivated ? super : :special_condition_is_not_valid
+end
 end

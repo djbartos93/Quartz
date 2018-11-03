@@ -7,7 +7,7 @@
         <div class="column is-half">
           <div class="field">
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= form_for(resource, as: resource_name, url: users_pre_otp_path, method: :post, remote: true, html: {id: 'step-1'}) do |f| %>
 
             <div class="control">
 
@@ -23,11 +23,28 @@
               </div>
             </div>
             </br >
+
+            <div class="actions">
+              <%= f.submit "next" %>
+            </div>
+            <% end %>
+
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'hidden', id: 'step-2'}) do |f| %>
+            <div class="field control">
+
+              <%= f.label :email, class: 'label has-text-centered' %>
+
+              <div class="control has-icons-left">
+
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+
             <div class="control">
+
 
               <%= f.label :password, class: "label has-text-centered" %>
 
-              <div class="control has-icons-left">
+              <div class="field control has-icons-left">
 
                 <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
 
@@ -38,8 +55,10 @@
             </div>
             </br >
 
-            <div><%= f.label :otp_attempt %><br />
-              <%= f.text_field :otp_attempt %> </div>
+            <div id="step-2-otp" class="field hidden">
+              <div><%= f.label :otp_attempt %><br />
+                <%= f.text_field :otp_attempt %> </div>
+            </div>
 
             <% if devise_mapping.rememberable? -%>
 

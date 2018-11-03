@@ -36,7 +36,15 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: '/')
   end
 
-
+  #reactivating user button function
+  def admin_reactivate
+    user = User.find(params[:id])
+    authorize! :edit, @user #prevent other users from disabling OTP on another user.
+    user.deactivated = false
+    user.save!
+    flash[:notice] = "Successfully Reactivated user."
+    redirect_back(fallback_location: '/')
+  end
 
   # need to override the update method so admins can fix accounts if users lock themselves out with 2fa enabled
   def update
@@ -53,10 +61,12 @@ class UsersController < ApplicationController
   end
 
 
+
+
   private
 
   def user_params
-     params.require(:user).permit(:email, :password, :password_confirmation)
+     params.require(:user).permit(:email, :password, :password_confirmation, :deactivated, :deactivation_reason)
   end
 
 end
