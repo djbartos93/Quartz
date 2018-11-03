@@ -5,9 +5,8 @@ class ApplicationController < ActionController::Base
   #this is what throws an error if you are not allowed to access a page. but right now it just tells you that you are logged in.
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
-      format.json { head :forbidden, content_type: 'text/html' }
-      format.html { redirect_to main_app.root_url, notice: exception.message }
-      format.js   { head :forbidden, content_type: 'text/html' }
+      format.json { head :forbidden }
+      format.html { redirect_to main_app.root_url, :alert => exception.message }
     end
   end
 

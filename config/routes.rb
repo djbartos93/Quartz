@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post 'users/enable_otp'
   post 'users/disable_otp'
 
+  post 'users/:id/enable_otp/' => 'users#admin_enable_otp', as: 'admin_enable_otp'
+    post 'users/:id/disable_otp/' => 'users#admin_disable_otp', as: 'admin_disable_otp'
+
   devise_for :users
     scope "/admin/user_admins/uses" do
       resources :users

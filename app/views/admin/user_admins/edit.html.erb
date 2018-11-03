@@ -11,13 +11,13 @@
 <% end %>
 
 
-<% if current_user %>
-  <% if !current_user.otp_required_for_login %>
+<% if @user %>
+  <% if !@user.otp_required_for_login %>
     <strong> User does not have 2 FA login enabled </strong>
   <% end %>
 
-  <% if current_user.otp_required_for_login %>
-    <%= button_to "Disable 2FA", users_disable_otp_path, :method => :post %>
+  <% if @user.otp_required_for_login %>
+    <%= button_to "Disable 2FA", admin_disable_otp_path, :method => :post %>
     <br>
   <% end %>
 <% end %>
