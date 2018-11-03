@@ -90,11 +90,11 @@ currently working on making this a less complex process.
 - [ ] style player adding pages
 ## CMS
 ### Core
-- [ ] Create home page that doesnt require logins
-- [ ] Create settings page and settings
-- [ ] Create "blog/announcements"
-- [ ] Make posts pinnable to top of home page
-- [ ] Make static pages
-  - [ ] static page manager
-- [ ] Image and file upload
+- [x] Create home page that doesnt require logins
+- [x] Create settings page and settings
+- [x] Create "blog/announcements"
+- [x] Make posts pinnable to top of home page
+- [x] Make static pages
+  - [x] static page manager
+- [x] Image and file upload
 - [ ] Docs section (some kind of wiki like function)
