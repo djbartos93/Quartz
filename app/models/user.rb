@@ -12,7 +12,9 @@ class User < ApplicationRecord
   before_create :build_player
   accepts_nested_attributes_for :player
 
-  has_many :invites
+  has_many :invites # active invites
+  has_many :users   # the users this user invited
+  belongs_to :user  # the user that invited this user 
 
   #adds deactivated method to devise
   def active_for_authentication?
