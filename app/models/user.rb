@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   has_many :invites # active invites
   has_many :users   # the users this user invited
-  belongs_to :user  # the user that invited this user 
+  #belongs_to :user  # the user that invited this user
 
   #adds deactivated method to devise
   def active_for_authentication?

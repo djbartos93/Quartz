@@ -221,7 +221,6 @@ ActiveRecord::Schema.define(version: 2018_11_04_033904) do
     t.boolean "otp_required_for_login"
     t.boolean "deactivated"
     t.text "deactivation_reason"
-    t.integer "available_invites", default: 5
     t.integer "invited_by_user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invited_by_user_id"], name: "index_users_on_invited_by_user_id"

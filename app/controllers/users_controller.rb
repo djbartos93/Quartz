@@ -56,7 +56,8 @@ class UsersController < ApplicationController
     flash[:notice] = "Successfully updated User."
     redirect_back(fallback_location: '/')
     else
-      render :action => 'edit'
+      flash[:alert] = "An error occored."
+      redirect_back(fallback_location: '/')
     end
   end
 
