@@ -175,7 +175,9 @@ ActiveRecord::Schema.define(version: 2018_11_03_042040) do
     t.integer "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["player_id"], name: "index_invites_on_player_id"
+    t.index ["user_id"], name: "index_invites_on_user_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -216,8 +218,10 @@ ActiveRecord::Schema.define(version: 2018_11_03_042040) do
     t.string "encrypted_otp_secret_salt"
     t.integer "consumed_timestep"
     t.boolean "otp_required_for_login"
+    t.string "otp_backup_codes"
     t.boolean "deactivated"
     t.text "deactivation_reason"
+    t.integer "available_invites", default: 5
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -5,22 +5,21 @@ class InvitesController < ApplicationController
   # GET /invites
   # GET /invites.json
   def index
-    @invites = current_user.player.invites
+    @invites = current_user.invites
   end
 
   # GET /invites/1
   # GET /invites/1.json
   def show
-    unless current_user.player.invites.include?(@invite)
+    unless current_user.invites.include?(@invite)
       redirect_back fallback_location: invites_url
     end
   end
 
   # GET /invites/new
   def new
-    # @invite = Invite.new
-    @invite = current_user.player.invites.build
-    @player = current_user.player
+    @invite = current_user.invites.build
+    @user = current_user
   end
 
   # GET /invites/1/edit
@@ -30,9 +29,8 @@ class InvitesController < ApplicationController
   # POST /invites
   # POST /invites.json
   def create
-    # @invite = Invite.new(invite_params)
-    @invite = current_user.player.invites.build(invite_params)
-    @player = current_user.player
+    @invite = current_user.invites.build(invite_params)
+    @user = current_user
 
     respond_to do |format|
       if @invite.save
@@ -75,7 +73,7 @@ class InvitesController < ApplicationController
 
   private
     def has_invites
-      unless current_user.player.available_invites > 0
+      unless current_user.available_invites > 0
         flash[:alert] = "You have no invites left"
 	redirect_back fallback_location: invites_url # TODO redirect to request page instead of just going back
       end
