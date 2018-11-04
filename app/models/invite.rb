@@ -16,6 +16,8 @@ class Invite < ApplicationRecord
   end
 
   def decrement_available_invites
-    user.decrement! :available_invites
+    unless user.admin
+      user.decrement! :available_invites
+    end
   end
 end

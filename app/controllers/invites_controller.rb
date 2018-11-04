@@ -73,7 +73,7 @@ class InvitesController < ApplicationController
 
   private
     def has_invites
-      unless current_user.available_invites > 0
+      unless current_user.available_invites > 0 or current_user.admin
         flash[:alert] = "You have no invites left"
 	redirect_back fallback_location: invites_url # TODO redirect to request page instead of just going back
       end
