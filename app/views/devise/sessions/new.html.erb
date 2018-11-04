@@ -38,6 +38,8 @@
               <div class="control has-icons-left">
 
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+              </div>
+            </div>
 
             <div class="control">
 
@@ -55,9 +57,16 @@
             </div>
             </br >
 
-            <div id="step-2-otp" class="field hidden">
-              <div><%= f.label :otp_attempt %><br />
-                <%= f.text_field :otp_attempt %> </div>
+            <div id="step-2-otp" class="control hidden">
+              <%= f.label :otp_attempt %><br />
+                <div class="field control has-icons-left">
+                <%= f.text_field :otp_attempt, class: "input" %>
+
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user-clock"></i>
+                </span>
+              </div>
+              </div>
             </div>
 
             <% if devise_mapping.rememberable? -%>

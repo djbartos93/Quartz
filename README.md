@@ -75,10 +75,7 @@ You will also have to change your root path. again in app/routes.rb change `root
 - [ ] Make invite codes work
   - [ ] Create invalid invite page
 - [ ] Create error pages
-- [ ] Prevent users from inviting more players than they are allowed to
-- [ ] Allow users to request more invites from an admin
-  - [ ] Create request pages
-  - [ ] Create request confirmation / deny actions (emails or alerts on the site?)
+- [x] Prevent users from inviting more players than they are allowed to
 - [ ] allow admins to have unlimited invites
 - [ ] prevent players from deleting used invites
 - [ ] create minecraft player view

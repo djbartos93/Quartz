@@ -212,16 +212,15 @@ ActiveRecord::Schema.define(version: 2018_11_03_042040) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.integer "available_invites", default: 5
     t.boolean "admin", default: false
     t.string "encrypted_otp_secret"
     t.string "encrypted_otp_secret_iv"
     t.string "encrypted_otp_secret_salt"
     t.integer "consumed_timestep"
     t.boolean "otp_required_for_login"
-    t.string "otp_backup_codes"
     t.boolean "deactivated"
     t.text "deactivation_reason"
-    t.integer "available_invites", default: 5
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
