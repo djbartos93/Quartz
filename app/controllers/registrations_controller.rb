@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  after_action :delete_invite, only: [:create]
+
   def devise_mapping
     Devise.mappings[:user]
   end
@@ -14,9 +16,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def save
-    super
-
-    # TODO: delete invite if user created successfully
+  def delete_invite
+    if not params[:token].blank?
+      if Invite.where(token: params[:token]).any?
+        # Delete the invite used to create the user
+        Invite.find_by(token: params[:token]).destroy
+      end
+    end
   end
 end
