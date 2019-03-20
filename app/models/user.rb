@@ -13,8 +13,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :player
 
   has_many :invites # active invites
-  has_many :users   # the users this user invited
-  belongs_to :user  # the user that invited this user 
+  # the users this user invited and the user that invited this user
+  has_many :users, :class_name => "User", :foreign_key => "invited_by_user_id"
+  belongs_to :user, :class_name => "User", :foreign_key => "invited_by_user_id", optional: true
 
   #adds deactivated method to devise
   def active_for_authentication?
